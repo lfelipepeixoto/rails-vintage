@@ -1,22 +1,33 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:destroy]
+
   def new
     @order = Order.new
   end
 
   def create
     @order = Order.new(order_params)
-    @order.car = Car.find(params[:car_id])
+    @order.user = current_user
 
     if @order.save
-      redirect_to @order
+      redirect_to @order, notice: 'Pedido criado com sucesso!'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @order.destroy
+    redirect_to orders_path, notice: 'Pedido excluído com sucesso!'
   end
 
   private
 
+  def set_order
+    @order = Order.find(params[:id])
+  end
+
   def order_params
-    params.require(:order).permit(:manufacturer, :model, :year, :km, :price, :color)
+    params.require(:order).permit(:comment, :car_id)
   end
 end

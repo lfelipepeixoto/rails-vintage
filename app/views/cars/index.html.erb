@@ -1,0 +1,19 @@
+<h1>Lista de Carros</h1>
+
+  <div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h3 class="mb-0">My Cars</h3>
+    <%= link_to "Create a car", new_car_path, class: "btn btn-flat" %>
+  </div>
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to car_path(car), class:"text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://media.istockphoto.com/id/1434792025/pt/foto/woman-traveling-with-car.jpg?s=2048x2048&w=is&k=20&c=EjWf5gzVEVENJe2CQZNdNTThyD19V1xXEuXhG5dNB3Q=')">
+            <%= car.model %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

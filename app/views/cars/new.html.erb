@@ -1,0 +1,17 @@
+<div class="container">
+      <h3> Add new car</h3>
+
+        <%= simple_form_for @car do |f| %>
+          <%= f.input :manufacturer, placeholder: 'Manufacturer' %>
+          <%= f.input :model, placeholder: 'Model' %>
+          <%= f.input :year, placeholder: 'Year' %>
+          <%= f.input :km, placeholder: 'km' %>
+          <%= f.input :price, placeholder: 'Price' %>
+          <%= f.input :color, placeholder: 'Color' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+        <div>
+            <%= link_to "Back to cars", cars_path %>
+
+        </div>
+</div>

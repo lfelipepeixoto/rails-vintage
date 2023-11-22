@@ -1,0 +1,9 @@
+<h1><%= @car.manufacturer%></h1>
+<h1><%= @car.model %></h1>
+<h1><%= @car.year %></h1>
+<h1><%= @car.km %></h1>
+<h1><%= @car.price %></h1>
+<h1><%= @car.color %></h1>
+
+<%= link_to "Back to cars", cars_path %>
+<%= link_to 'Delete this car', car_path(@car), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>

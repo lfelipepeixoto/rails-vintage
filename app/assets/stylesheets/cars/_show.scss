@@ -1,0 +1,50 @@
+
+
+/* Estilos para a classe container */
+.container {
+  text-align: center;
+  max-width: 600px; /* Define a largura máxima do container */
+  margin: 0 auto; /* Centraliza o container na página */
+  padding: 20px; /* Adiciona um espaço interno ao redor do container */
+  background-color: #f9f9f9; /* Cor de fundo para o container */
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+/* Estilos para o título */
+.title {
+  text-align: center; /* Centraliza o texto do título */
+  font-size: 32px; /* Define o tamanho da fonte do título */
+  margin-bottom: 20px; /* Adiciona um espaço abaixo do título */
+}
+
+/* Estilos para a imagem */
+.card-category img {
+  display: block; /* Garante que a imagem seja exibida como um bloco */
+  max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner pai */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-bottom: 20px; /* Adiciona um espaço abaixo da imagem */
+}
+
+/* Estilos para os parágrafos */
+.card-category p {
+  margin-bottom: 10px; /* Adiciona um espaço entre os parágrafos */
+}
+
+/* Estilos para os botões */
+.btn {
+  display: inline-block; /* Permite que os botões fiquem em linha */
+  padding: 8px 16px; /* Adiciona espaçamento interno aos botões */
+  margin-right: 10px; /* Adiciona um espaço entre os botões */
+  text-decoration: none; /* Remove sublinhado padrão de links */
+  border-radius: 4px; /* Adiciona bordas arredondadas aos botões */
+}
+
+.btn-delete {
+  background-color: #ff4d4f; /* Cor de fundo para o botão de exclusão */
+  color: #fff; /* Cor do texto para o botão de exclusão */
+}
+
+.btn-delete:hover {
+  background-color: #ff7875; /* Cor de fundo ao passar o mouse sobre o botão de exclusão */
+}

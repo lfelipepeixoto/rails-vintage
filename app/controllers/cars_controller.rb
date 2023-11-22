@@ -46,6 +46,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:manufacturer, :model, :year, :km, :price, :color)
+    params.require(:car).permit(:manufacturer, :model, :year, :km, :price, :color, :photo)
   end
 end

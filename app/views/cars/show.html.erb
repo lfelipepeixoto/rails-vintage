@@ -1,9 +1,73 @@
-<h1><%= @car.manufacturer%></h1>
-<h1><%= @car.model %></h1>
-<h1><%= @car.year %></h1>
-<h1><%= @car.km %></h1>
-<h1><%= @car.price %></h1>
-<h1><%= @car.color %></h1>
+<section class="navigation">
+  <div class="nav-container">
+    <div class="brand">
+      <a href="/"><i class="fa-solid fa-car-side" style="color: #ed6b0f;"></i></i></a>
+    </div>
+    <nav>
+      <div class="nav-mobile"><a id="nav-toggle" href="/"><span></span></a></div>
+      <ul class="nav-list">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="#!">About</a>
+        </li>
+        <li>
+          <a href="#!">Services</a>
+          <ul class="nav-dropdown">
+            <li>
+              <%= link_to "Buy", cars_path %>
+            </li>
+            <li>
+              <%= link_to "Sell", new_car_path%>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!">Portfolio</a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="#!">Our Cars</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#!">Contact</a>
+        </li>
+        <li>
+          <a href="#!">
+                    <img class src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Foto de Perfil" width="50" height="50">
+          </a>
+          <ul class="nav-dropdown">
+            <li>
+              <a href="#!">My profile</a>
+            </li>
+            <li>
+              <a href="#!">My cars</a>
+            </li>
+            <li>
+              <a href="#!">Log out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
 
-<%= link_to "Back to cars", cars_path %>
-<%= link_to 'Delete this car', car_path(@car), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
+
+<div class="container">
+  <h1 class="title"><%= @car.manufacturer%></h1>
+  <div class="card-category">
+  <%= cl_image_tag @car.photo.key, height: 300, width: 400 %>
+    <p><strong>Model:</strong> <%= @car.model %></p>
+    <p><strong>Year:</strong> <%= @car.year %></p>
+    <p><strong>Kilometers:</strong> <%= @car.km %></p>
+    <p><strong>Color:</strong> <%= @car.color %></p>
+    <p><strong>Price:</strong> <%= @car.price %></p>
+
+  <%= link_to "Back to cars", cars_path, class: "btn" %>
+  <%= link_to 'Delete this car', car_path(@car), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-delete" %>
+  </div>
+</div>

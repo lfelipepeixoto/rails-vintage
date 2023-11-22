@@ -2,16 +2,13 @@
       <h3> Add new car</h3>
 
         <%= simple_form_for @car do |f| %>
-          <%= f.input :manufacturer, placeholder: 'Manufacturer' %>
-          <%= f.input :model, placeholder: 'Model' %>
-          <%= f.input :year, placeholder: 'Year' %>
-          <%= f.input :km, placeholder: 'km' %>
-          <%= f.input :price, placeholder: 'Price' %>
-          <%= f.input :color, placeholder: 'Color' %>
+          <%= f.input :manufacturer %>
+          <%= f.input :model %>
+          <%= f.input :year %>
+          <%= f.input :km %>
+          <%= f.input :price %>
+          <%= f.input :color %>
+          <%= f.input :photo, as: :file %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
-        <div>
-            <%= link_to "Back to cars", cars_path %>
-
-        </div>
 </div>

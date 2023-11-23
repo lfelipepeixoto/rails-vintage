@@ -9,14 +9,10 @@
       <div class="col-md-4">
         <div class="card rounded">
           <div class="card-image">
-              <span class="card-notify-badge">Low KMS</span>
             <span class="card-notify-year"><%= car.year %></span>
             <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
           </div>
           <div class="card-image-overlay m-auto">
-            <span class="card-detail-badge">NOVO</span>
-            <span class="card-detail-badge">$<%= car.price %></span>
-            <span class="card-detail-badge"><%= car.km %> Kms</span>
           </div>
           <div class="card-body text-center">
             <div class="ad-title m-auto">

@@ -11,27 +11,11 @@
   </head>
 
   <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%= render "layouts/navbar" %>
+    <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        // Seu código jQuery para dropdown aqui...
-        $('.nav-list > li').has('.nav-dropdown').hover(
-          function(){
-            $(this).children('.nav-dropdown').stop(true, true).slideDown(200);
-          },
-          function(){
-            $(this).children('.nav-dropdown').stop(true, true).slideUp(200);
-          }
-        );
-      });
-    </script>
-
-    <%= yield %>
-
+    <%= render "layouts/footer" %>
   </body>
 </html>

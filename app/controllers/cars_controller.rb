@@ -1,5 +1,6 @@
 class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:my_cars]
 
   def index
     @cars = Car.all
@@ -40,13 +41,16 @@ class CarsController < ApplicationController
   end
 
   def about
-    @company_history = "Nossa empresa foi fundada em 20XX e tem uma rica história..."
     render 'about'
   end
 
   def contact
     @contact = "admin@admin.com / (11)988864545"
     render 'contact'
+  end
+
+  def my_cars
+    @user_cars = current_user.cars
   end
 
   private

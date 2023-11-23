@@ -1,0 +1,10 @@
+<!-- app/views/cars/meus_carros.html.erb -->
+
+<h2>Meus Carros para Venda</h2>
+
+<% @user_cars.each do |car| %>
+  <div class="car-listing">
+    <h3><%= car.modelo %></h3>
+    <!-- Adicione mais detalhes do carro conforme necessário -->
+  </div>
+<% end %>

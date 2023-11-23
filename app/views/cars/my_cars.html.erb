@@ -1,10 +1,25 @@
-<!-- app/views/cars/meus_carros.html.erb -->
-
-<h2>Meus Carros para Venda</h2>
+<h1>My Cars</h1>
 
 <% @user_cars.each do |car| %>
-  <div class="car-listing">
-    <h3><%= car.modelo %></h3>
-    <!-- Adicione mais detalhes do carro conforme necessário -->
+  <div class="col-md-4">
+    <div class="card rounded">
+      <div class="card-image">
+          <span class="card-notify-badge">Low KMS</span>
+        <span class="card-notify-year"><%= car.year %></span>
+        <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
+      </div>
+      <div class="card-image-overlay m-auto">
+        <span class="card-detail-badge">NOVO</span>
+        <span class="card-detail-badge">$<%= car.price %></span>
+        <span class="card-detail-badge"><%= car.km %> Kms</span>
+      </div>
+      <div class="card-body text-center">
+        <div class="ad-title m-auto">
+          <h5><%= car.model %></h5>
+        </div>
+    <a class="ad-btn"  <%= link_to car_path(car), class:"text-decoration-none" do %> VIEW </a>
+      </div>
+    </div>
   </div>
+  <% end %>
 <% end %>

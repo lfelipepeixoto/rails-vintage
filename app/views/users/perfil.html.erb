@@ -1,0 +1,11 @@
+
+<div class="perfil-container">
+  <h2>Perfil do Usuário</h2>
+
+  <p><strong>Nome:</strong> <%= "#{@user.first_name} #{@user.last_name}" %></p>
+
+  <p><strong>Email:</strong> <%= @user.email %></p>
+
+  <%= link_to 'Editar Perfil', edit_user_registration_path %>
+  <%= link_to 'Alterar Senha', edit_user_password_path %>
+</div>

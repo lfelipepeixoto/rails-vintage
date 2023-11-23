@@ -1,133 +1,53 @@
-<section class="navigation">
-  <div class="nav-container">
-    <div class="brand">
-      <a href="/"><i class="fa-solid fa-car-side" style="color: #ed6b0f;"></i></i></a>
-    </div>
-    <nav>
-      <div class="nav-mobile"><a id="nav-toggle" href="/"><span></span></a></div>
-      <ul class="nav-list">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="#!">About</a>
-        </li>
-        <li>
-          <a href="#!">Services</a>
-          <ul class="nav-dropdown">
-            <li>
-              <a href="/cars">Buy</a>
-            </li>
-            <li>
-              <%= link_to "Sell", new_car_path%>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#!">Portfolio</a>
-          <ul class="nav-dropdown">
-            <li>
-              <a href="#!">Our Cars</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#!">Contact</a>
-        </li>
-        <li>
-          <a href="#!">
-                    <img class src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Foto de Perfil" width="50" height="50">
-          </a>
-          <ul class="nav-dropdown">
-            <li>
-              <a href="#!">My profile</a>
-            </li>
-            <li>
-              <a href="#!">My cars</a>
-            </li>
-            <li>
-              <a href="#!">Log out</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</section>
+<div class="banner" style="background-image: url(https://res.cloudinary.com/di69rkads/image/upload/v1700746571/Captura_de_Tela_2023-11-23_a%CC%80s_10.35.56_ti312s.png);">
+
+</div>
 
 <article>
-  <div id="carouselExampleAutoplaying" data-controller="cars" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://cdn.revendamais.com.br/FC/6327/3475955_0_M_aa6b3a4f84.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://ateliedocarro.com.br/wp-content/uploads/2021/07/Fusca-1300-1970-Preto-22-site.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://i.ytimg.com/vi/ZuX0TvtDX8E/sddefault.jpg?v=6398f975" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-target="carsElement" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div class="content">
+    <h2 class="mt-4 mb-4"> <strong>STAY VINTAGE</strong></h2>
+    <h3>Explore the world's largest car vintage marketplace</h3>
   </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <%# <h2 class="mt-4 mb-4"> <strong>STAY VINTAGE</strong></h2>
+            <h3>Explore the world's largest car vintage marketplace</h3> %>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <!-- Bootstrap card box -->
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="https://res.cloudinary.com/di69rkads/image/upload/v1700746571/Captura_de_Tela_2023-11-23_a%CC%80s_10.35.56_ti312s.pngi)" class="img-fluid" alt="">
+                </div>
+                <h3><a href="#" class="mt-2 text-danger">Autênticos</a></h3>
+                <p class="text-secondary"></p>
+                <a href="#" class="btn btn-sm btn-danger float-right">Read more >></a>
+            </div>
+        </div>
 
+        <div class="col-md-6 col-lg-4">
+            <!-- Bootstrap card box -->
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="images/office-image-two.jpg" class="img-fluid" alt="">
+                </div>
+                <h3><a href="#" class="mt-2 text-danger">Originais</a></h3>
+                <p class="text-secondary"></p>
+                <a href="#" class="btn btn-sm btn-danger float-right">Read more >></a>
+            </div>
+        </div>
 
-<div class="card-container">
-  <div class="card" style="width: 18rem;">
-    <img src="https://cdn.revendamais.com.br/FC/6327/3475955_0_M_aa6b3a4f84.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">D-20</h5>
-      <p class="card-text">O queridinho do momento com nova motorização</p>
-      <a href="#" class="btn btn-primary">Saiba mais</a>
+        <div class="col-md-6 col-lg-4">
+            <!-- Bootstrap card box -->
+            <div class="card-box">
+                <div class="card-thumbnail">
+                    <img src="images/office-image-three.jpg" class="img-fluid" alt="">
+                </div>
+                <h3><a href="#" class="mt-2 text-danger">Restaurados</a></h3>
+                <p class="text-secondary"></p>
+                <a href="#" class="btn btn-sm btn-danger float-right">Read more >></a>
+            </div>
+        </div>
     </div>
-  </div>
-
- <div class="card" style="width: 18rem;">
-    <img src="https://ateliedocarro.com.br/wp-content/uploads/2021/07/Fusca-1300-1970-Preto-22-site.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">FUSCÃO</h5>
-      <p class="card-text">O capô mais famoso do Brasil!</p>
-      <a href="#" class="btn btn-primary">Saiba mais</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-      <img src="https://i.ytimg.com/vi/ZuX0TvtDX8E/sddefault.jpg?v=6398f975" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">FORD F-1000</h5>
-        <p class="card-text">Ameçeado de sair do mercado! O modelo continuará? </p>
-        <a href="#" class="btn btn-primary">Saiba mais</a>
-      </div>
-    </div>
-  </div>
-
+</div>
 </article>
-
-<section class="navigation" id="second-navigation">
-  <div class="nav-container">
-    <!-- ... Estrutura da segunda barra de navegação ... -->
-    <nav>
-      <div class="nav-mobile"><a id="nav-toggle-bottom" href="#!"><span></span></a></div>
-      <ul class="nav-list">
-        <!-- Adicione os itens do menu da segunda barra de navegação conforme necessário -->
-        <li>
-          <a href="#!">Termos de Uso</a>
-        </li>
-        <li>
-          <a href="#!">Política de Privacidade</a>
-        </li>
-        <li>
-          <a href="#!">FAQ</a>
-        </li>
-        <!-- ... Mais itens conforme necessário ... -->
-      </ul>
-    </nav>
-  </div>
-</section>

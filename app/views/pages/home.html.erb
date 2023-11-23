@@ -3,10 +3,19 @@
 </div>
 
 <article>
+<%= form_with url: cars_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Type a keyword"
+    %>
+  <%= submit_tag "Search", name: "", class: "btn my-custom-button" %>
+<% end %>
 <div class="content">
     <h2 class="mt-4 mb-4"> <strong>FIND YOUR DRIVE! STAY VINTAGE</strong></h2>
     <h3>Explore the world's largest car vintage marketplace</h3>
-  </div>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-12">

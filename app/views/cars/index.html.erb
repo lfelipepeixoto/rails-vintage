@@ -11,7 +11,9 @@
           <div class="card-image">
               <span class="card-notify-badge">Low KMS</span>
             <span class="card-notify-year"><%= car.year %></span>
-            <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
+            <% if car.photo.attached? %>
+              <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
+            <% end %>
           </div>
           <div class="card-image-overlay m-auto">
             <span class="card-detail-badge">NOVO</span>
@@ -22,12 +24,12 @@
             <div class="ad-title m-auto">
               <h5><%= car.model %></h5>
             </div>
-        <a class="ad-btn"  <%= link_to car_path(car), class:"text-decoration-none" do %> VIEW </a>
+        <a class="ad-btn">  <%= link_to car_path(car), class:"text-decoration-none" do %> VIEW </a>
             <%# <a class="ad-btn" href="#">View</a> %>
           </div>
         </div>
       </div>
     <% end %>
-     <% end %>
+  <% end %>
   </div>
 </div>

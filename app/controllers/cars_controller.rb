@@ -39,6 +39,16 @@ class CarsController < ApplicationController
     redirect_to cars_path, notice: 'Carro excluído com sucesso!'
   end
 
+  def about
+    @company_history = "Nossa empresa foi fundada em 20XX e tem uma rica história..."
+    render 'about'
+  end
+
+  def contact
+    @contact = "admin@admin.com / (11)988864545"
+    render 'contact'
+  end
+
   private
 
   def set_car

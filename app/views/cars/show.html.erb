@@ -1,14 +1,17 @@
 <div class="container">
   <h1 class="title"><%= @car.model%></h1>
   <div class="card-category">
-  <%# <%= cl_image_tag @car.photo.key, height: 300, width: 400 %> 
+  <%= cl_image_tag @car.photo.key, height: 300, width: 400 %>
+    <p><strong>Manufacturer:</strong> <%= @car.manufacturer %></p>
     <p><strong>Model:</strong> <%= @car.model %></p>
     <p><strong>Year:</strong> <%= @car.year %></p>
     <p><strong>Kilometers:</strong> <%= @car.km %></p>
     <p><strong>Color:</strong> <%= @car.color %></p>
     <p><strong>Price:</strong> <%= @car.price %></p>
 
-  <%= link_to "Back to cars", cars_path, class: "btn" %>
-  <%= link_to 'Delete this car', car_path(@car), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-delete" %>
+  <%= link_to "Back to cars", cars_path, class: "btn btn-primary" %>
+  <% if @car.user == current_user %>
+    <%= link_to 'Delete this car', car_path(@car), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-delete" %>
+  <% end %>
   </div>
 </div>

@@ -53,6 +53,10 @@ class CarsController < ApplicationController
     @user_cars = current_user.cars
   end
 
+  def policy
+    render 'policy'
+  end
+
   private
 
   def set_car

@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/contact', to: 'cars#contact', as: 'contact'
   get '/perfil', to: 'users#perfil', as: 'perfil'
   get '/my_cars', to: 'cars#my_cars', as: 'my_cars'
+  get '/policy', to: 'cars#policy', as: 'policy'
+
 end

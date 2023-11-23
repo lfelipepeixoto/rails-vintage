@@ -1,28 +1,33 @@
 
 <div class="container">
+  <br>
+  <h4>Our cars</h4>
+  <br>
+  <div class="row" id="ads">
+    <!-- Category Card -->
     <% @cars.each do |car| %>
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-4 col-lg-4">
-            <div class="thumbnail">
-                  <%# <%= cl_image_tag car.photo.key, height: 300, width: 400 %> 
-                <div class="caption">
-                    <h4 class="group inner list-group-item-heading">
-                        <%= car.model %></h4>
-                    <p class="group inner list-group-item-text">
-                    <%= car.km %>km</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">
-                              R$ <%= car.price %></p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success"  <%= link_to car_path(car), class:"text-decoration-none" do %> >SPECS</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="col-md-4">
+        <div class="card rounded">
+          <div class="card-image">
+              <span class="card-notify-badge">Low KMS</span>
+            <span class="card-notify-year"><%= car.year %></span>
+            <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
+          </div>
+          <div class="card-image-overlay m-auto">
+            <span class="card-detail-badge">NOVO</span>
+            <span class="card-detail-badge">$<%= car.price %></span>
+            <span class="card-detail-badge"><%= car.km %> Kms</span>
+          </div>
+          <div class="card-body text-center">
+            <div class="ad-title m-auto">
+              <h5><%= car.model %></h5>
             </div>
+        <a class="ad-btn">  <%= link_to car_path(car), class:"text-decoration-none" do %> VIEW </a>
+            <%# <a class="ad-btn" href="#">View</a> %>
+          </div>
         </div>
-        <% end %>
-      <% end %>
       </div>
+    <% end %>
+     <% end %>
+  </div>
 </div>

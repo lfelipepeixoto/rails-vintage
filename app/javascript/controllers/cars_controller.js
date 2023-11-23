@@ -6,4 +6,8 @@ export default class extends Controller {
   connect() {
     console.log("Hello from toggle_controller.jsCA")
   }
+
+  goToAboutPage() {
+    this.routerTarget.goToAboutPage();
+  }
 }

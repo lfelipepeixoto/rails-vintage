@@ -19,11 +19,10 @@
             <div class="ad-title m-auto">
               <h5><%= car.model %></h5>
             </div>
-        <a class="ad-btn" <%= link_to car_path(car), class:"text-decoration-none" do %> VIEWS </a>
+            <%= link_to "VIEWS",car_path(car), class:"text-decoration-none ad-btn" %>
           </div>
         </div>
       </div>
     <% end %>
-  <% end %>
   </div>
 </div>

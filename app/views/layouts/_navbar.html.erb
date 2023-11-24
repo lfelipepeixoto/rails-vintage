@@ -1,28 +1,32 @@
 <section class="navigation">
-  <%# <div class="nav-container"> %>
-    <div class="brand">
-      <a href="/"><i class="fa-solid fa-car-side" style="color: #ed6b0f;"></i></i></a>
-    </div>
-    <nav>
-      <div class="nav-mobile"><a id="nav-toggle" href="/"><span></span></a></div>
-      <ul class="nav-list">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-         <%= link_to "About", about_path %>
-        </li>
-        <li>
-          <a href="#!">Services</a>
-          <ul class="nav-dropdown">
-            <li>
-              <%= link_to "Buy", cars_path %>
-            </li>
-            <li>
-              <%= link_to "Sell", new_car_path%>
-            </li>
-          </ul>
-        </li>
+  <div class="brand">
+    <a href="/"><i class="fa-solid fa-car-side" style="color: #ed6b0f;"></i></i></a>
+  </div>
+  <%# -------------------------------------------------------------------------- %>
+<nav>
+  <div class="nav-mobile"><a id="nav-toggle" href="/"><span></span></a></div>
+    <ul class="nav-list">
+<%# -------------------------------------------------------------------------- %>
+      <li>
+        <a href="/">Home</a>
+      </li>
+<%# -------------------------------------------------------------------------- %>
+      <li>
+        <%= link_to "About", about_path %>
+      </li>
+<%# -------------------------------------------------------------------------- %>
+      <li>
+        <a href="#!">Services</a>
+        <ul class="nav-dropdown">
+          <li>
+            <%= link_to "Buy", cars_path %>
+          </li>
+          <li>
+            <%= link_to "Sell", new_car_path%>
+          </li>
+        </ul>
+      </li>
+<%# -------------------------------------------------------------------------- %>
         <li>
           <a href="#!">Portfolio</a>
           <ul class="nav-dropdown">
@@ -31,26 +35,25 @@
             </li>
           </ul>
         </li>
-            <li>
-            <%= link_to "Contact", contact_path %>
-            </li>
+<%# -------------------------------------------------------------------------- %>
+        <li>
+          <%= link_to "Contact", contact_path %>
+        </li>
+<%# -------------------------------------------------------------------------- %>
         <li>
           <a href="#!">
-                    <img class src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Foto de Perfil" width="50" height="50">
+            <img class src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png" alt="Foto de Perfil" width="50" height="50">
           </a>
           <ul class="nav-dropdown">
             <li>
-               <%= link_to 'Perfil', perfil_path %>
+              <%= link_to 'Perfil', perfil_path %>
             </li>
             <li>
               <%= link_to 'My Cars', my_cars_path %>
             </li>
-            <li>
-
-            </li>
           </ul>
         </li>
-      </ul>
-    </nav>
-  <%# </div> %>
+<%# -------------------------------------------------------------------------- %>
+    </ul>
+</nav>
 </section>

@@ -1,9 +1,10 @@
-<%= form_with(model: sale, local: true) do |form| %>
-  <!-- Adicione os campos do formulário conforme necessário -->
-  <%= form.hidden_field :user_id, value: @car.user_id %>
-  <%= form.hidden_field :car_id, value: @car.id %>
-  <%= form.label :sale_date %>
-  <%= form.datetime_local_field :sale_date %>
+<%= form_with(model: order, local: true, id: 'order_form') do |form| %>
 
-  <%= form.submit 'Criar Venda' %>
+  <% if @car.present? %>
+    <%= form.hidden_field :user_id, value: @car.user_id %>
+    <%= form.hidden_field :car_id, value: @car.id %>
+  <% end %>
+
+  <%= form.hidden_field :order_date, id: 'order_date', class: 'hidden-field' %>
+  <%= form.submit 'Enviar Pedido!', id: 'submit_button' %>
 <% end %>

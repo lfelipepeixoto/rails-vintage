@@ -4,7 +4,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :cars
+  resources :users, only: [] do
+    get 'my_cars', on: :member
+  end
+
+  resources :cars do
+    member do
+      post 'buy'
+    end
+  end
   get '/about', to: 'cars#about', as: 'about'
   get '/contact', to: 'cars#contact', as: 'contact'
   get '/perfil', to: 'users#perfil', as: 'perfil'

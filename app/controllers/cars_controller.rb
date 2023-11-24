@@ -14,6 +14,20 @@ class CarsController < ApplicationController
     @user = @car.user
   end
 
+  def buy
+    @car = Car.find(params[:id])
+    @order = Order.new(order_params)
+    @order.car = @car
+    @order.user = current_user
+
+    if @order.save
+      flash[:notice] = 'Pedido de compra enviado com sucesso!'
+      redirect_to my_cars_user_path(current_user)
+    else
+      render :show
+    end
+  end
+
   def new
     @car = Car.new
   end
@@ -56,6 +70,7 @@ class CarsController < ApplicationController
 
   def my_cars
     @user_cars = current_user.cars
+    @requested_cars = current_user.requested_cars
   end
 
   def policy
@@ -68,6 +83,10 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
   end
 
+  def order_params
+    params.require(:order).permit(:order_date)
+  end
+  
   def car_params
     params.require(:car).permit(:manufacturer, :model, :year, :km, :price, :color, :photo)
   end

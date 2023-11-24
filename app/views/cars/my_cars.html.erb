@@ -22,5 +22,30 @@
       </div>
     <% end %>
   <% end %>
+
+ <% if current_user.requested_cars.any? %>
+    <div class="row mt-5">
+      <% current_user.requested_cars.each do |car| %>
+        <div class="col-md-4">
+          <div class="card rounded">
+            <div class="card-image">
+              <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" if car.photo.attached? %>
+            </div>
+            <div class="card-image-overlay m-auto">
+            </div>
+            <div class="card-body text-center">
+              <div class="ad-title m-auto">
+                <h5><%= car.model %></h5>
+              </div>
+              <%= link_to 'Detalhes', car_path(car), class: 'btn btn-primary' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Você ainda não solicitou comprar nenhum carro.</p>
+  <% end %>
+</div>
   </div>
 </div>

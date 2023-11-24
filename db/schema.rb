@@ -58,31 +58,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_24_165410) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "car_id", null: false
+    t.datetime "order_date", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "order_date"
     t.datetime "sale_date"
     t.index ["car_id"], name: "index_orders_on_car_id"
+    t.index ["user_id", "car_id"], name: "index_orders_on_user_id_and_car_id", unique: true
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "ownerships", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "car_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_ownerships_on_car_id"
-    t.index ["user_id"], name: "index_ownerships_on_user_id"
-  end
-
-  create_table "sales", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "car_id", null: false
-    t.datetime "sale_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["car_id"], name: "index_sales_on_car_id"
-    t.index ["user_id"], name: "index_sales_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -105,8 +87,4 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_24_165410) do
   add_foreign_key "cars", "users"
   add_foreign_key "orders", "cars"
   add_foreign_key "orders", "users"
-  add_foreign_key "ownerships", "cars"
-  add_foreign_key "ownerships", "users"
-  add_foreign_key "sales", "cars"
-  add_foreign_key "sales", "users"
 end

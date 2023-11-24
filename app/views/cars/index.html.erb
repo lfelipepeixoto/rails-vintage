@@ -1,4 +1,3 @@
-
 <div class="container">
   <br>
   <h4>Our cars</h4>
@@ -20,8 +19,7 @@
             <div class="ad-title m-auto">
               <h5><%= car.model %></h5>
             </div>
-        <a class="ad-btn">  <%= link_to car_path(car), class:"text-decoration-none" do %> VIEW </a>
-            <%# <a class="ad-btn" href="#">View</a> %>
+        <a class="ad-btn" <%= link_to car_path(car), class:"text-decoration-none" do %> VIEWS </a>
           </div>
         </div>
       </div>

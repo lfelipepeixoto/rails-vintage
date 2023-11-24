@@ -1,0 +1,32 @@
+.perfil-container {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.perfil-container h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.perfil-container p {
+  margin-bottom: 10px;
+}
+
+.perfil-container strong {
+  font-weight: bold;
+}
+
+.perfil-container a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.perfil-container a:hover {
+  text-decoration: underline;
+}

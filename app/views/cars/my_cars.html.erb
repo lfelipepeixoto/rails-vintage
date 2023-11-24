@@ -8,9 +8,7 @@
       <div class="col-md-4">
         <div class="card rounded">
           <div class="card-image">
-            <% if car.photo.attached? %>
-              <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" %>
-            <% end %>
+              <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" if car.photo.attached?  %>
           </div>
           <div class="card-image-overlay m-auto">
           </div>

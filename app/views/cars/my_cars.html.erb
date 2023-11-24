@@ -22,7 +22,6 @@
       </div>
     <% end %>
   <% end %>
-<<<<<<< HEAD
     </div>
     </div>
 
@@ -35,13 +34,6 @@
 <% if current_user.requested_cars.any? %>
     <div class="row mt-5">
       <% current_user.requested_cars.each do |car| %>
-=======
-
- <% if current_user.requested_cars.any? %>
-    <div class="row mt-5">
-      <% current_user.requested_cars.each do |car| %>
-        <div class="col-md-4">
->>>>>>> master
           <div class="card rounded">
             <div class="card-image">
               <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" if car.photo.attached? %>

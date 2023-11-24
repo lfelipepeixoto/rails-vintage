@@ -1,9 +1,36 @@
-<%= form_with(model: sale, local: true) do |form| %>
+<%= form_with(model: order, local: true, id: 'order_form') do |form| %>
   <!-- Adicione os campos do formulário conforme necessário -->
-  <%= form.hidden_field :user_id, value: @car.user_id %>
-  <%= form.hidden_field :car_id, value: @car.id %>
-  <%= form.label :sale_date %>
-  <%= form.datetime_local_field :sale_date %>
+  <%= form.hidden_field :user_id, value: @car.user_id if @car %>
+  <%= form.hidden_field :car_id, value: @car.id if @car %>
 
-  <%= form.submit 'Criar Venda' %>
+  <!-- Adicione um campo de confirmação -->
+  <p>Tem certeza que deseja enviar o pedido de compra?</p>
+  <%= form.check_box :confirmation, id: 'confirmation_checkbox' %>
+
+  <%= form.label :order_date %>
+  <%= form.datetime_local_field :order_date, value: Time.now.strftime('%Y-%m-%dT%H:%M'), disabled: true %>
+
+          <% if user_signed_in? %>
+          <%= link_to 'Enviar pedido!', buy_cars_path(@car), method: :post, class: 'btn btn-primary' %>
+        <% end %>
 <% end %>
+
+<script>
+  // Configuração inicial
+  $(document).ready(function () {
+    // Desabilita o botão de envio inicialmente
+    $('#order_form :submit').prop('disabled', true);
+
+    // Adiciona um ouvinte de mudança ao campo de confirmação
+    $('#confirmation_checkbox').change(function() {
+      // Ativa/desativa o botão de envio com base no estado do campo de confirmação
+      $('#order_form :submit').prop('disabled', !this.checked);
+    });
+  });
+
+  // Define a data e hora atuais no campo de data automaticamente
+  $('#order_form :submit').click(function() {
+    var currentDateTime = new Date().toISOString().slice(0, 16);
+    $('#order_order_date').val(currentDateTime);
+  });
+</script>

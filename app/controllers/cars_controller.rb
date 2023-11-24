@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: [:show, :edit, :update, :destroy]
+  before_action :set_car, only: [:show, :edit, :update, :destroy, :another_action, :buy]
   before_action :authenticate_user!, only: [:my_cars]
 
   def index
@@ -60,6 +60,29 @@ class CarsController < ApplicationController
 
   def policy
     render 'policy'
+  end
+
+  def another_action
+    render :another_view
+  end
+
+  def buy
+    existing_order = current_user.orders.find_by(car: @car)
+
+    if existing_order
+      flash[:alert] = 'Você já enviou um pedido de compra para este carro.'
+      redirect_to car_path(@car)
+    else
+      order = current_user.orders.build(car: @car, order_date: Time.now)
+
+      if order.save
+        flash[:notice] = 'Pedido de compra enviado com sucesso!'
+        redirect_to my_cars_path
+      else
+        flash[:alert] = 'Erro ao enviar o pedido de compra.'
+        redirect_to car_path(@car)
+      end
+    end
   end
 
   private

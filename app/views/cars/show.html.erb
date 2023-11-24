@@ -14,7 +14,9 @@
       <div class="info-card">
         <h3><strong>Nome do Vendedor:</strong> <%= @car.user.first_name %></h3>
         <h3><strong>Email do Vendedor:</strong> <%= @car.user.email %></h3>
-        <%= link_to "Buy", new_order_path(car_id: @car.id), class: "btn btn-primary" %>
+        <%= form_with(model: @order, local: true, url: buy_car_path(@car), id: 'order_form') do |form| %>
+          <%= form.submit 'Confirmar Pedido', id: 'submit_button' %>
+        <% end %>
       </div>
 
     </div>

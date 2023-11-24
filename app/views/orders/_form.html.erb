@@ -1,4 +1,5 @@
 <%= form_with(model: order, local: true, id: 'order_form') do |form| %>
+<<<<<<< HEAD
   <!-- Adicione os campos do formulário conforme necessário -->
   <%= form.hidden_field :user_id, value: @car.user_id if @car %>
   <%= form.hidden_field :car_id, value: @car.id if @car %>
@@ -13,6 +14,16 @@
           <% if user_signed_in? %>
           <%= link_to 'Enviar pedido!', buy_cars_path(@car), method: :post, class: 'btn btn-primary' %>
         <% end %>
+=======
+
+  <% if @car.present? %>
+    <%= form.hidden_field :user_id, value: @car.user_id %>
+    <%= form.hidden_field :car_id, value: @car.id %>
+  <% end %>
+
+  <%= form.hidden_field :order_date, id: 'order_date', class: 'hidden-field' %>
+  <%= form.submit 'Enviar Pedido!', id: 'submit_button' %>
+>>>>>>> master
 <% end %>
 
 <script>

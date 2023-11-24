@@ -7,7 +7,8 @@ class Car < ApplicationRecord
   validates :km, presence: true
 
   belongs_to :user
-  has_one :orders, dependent: :destroy
+  has_one :order, dependent: :destroy
+  has_many :requested_cars, through: :orders, source: :car
 
   has_one_attached :photo
 

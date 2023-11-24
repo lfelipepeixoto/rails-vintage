@@ -22,11 +22,18 @@
       </div>
     <% end %>
   <% end %>
+    </div>
+    </div>
 
- <% if current_user.requested_cars.any? %>
+    <div class="container">
+  <br>
+  <h4>My Orders</h4>
+  <br>
+  <div class="row" id="ads">
+
+<% if current_user.requested_cars.any? %>
     <div class="row mt-5">
       <% current_user.requested_cars.each do |car| %>
-        <div class="col-md-4">
           <div class="card rounded">
             <div class="card-image">
               <%= cl_image_tag car.photo.key, crop: :fit, class:"car-image" if car.photo.attached? %>
@@ -47,5 +54,8 @@
     <p>Você ainda não solicitou comprar nenhum carro.</p>
   <% end %>
 </div>
+<<<<<<< HEAD
+=======
   </div>
+>>>>>>> master
 </div>

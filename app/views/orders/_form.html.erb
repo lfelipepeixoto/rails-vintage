@@ -1,0 +1,9 @@
+<%= form_with(model: sale, local: true) do |form| %>
+  <!-- Adicione os campos do formulário conforme necessário -->
+  <%= form.hidden_field :user_id, value: @car.user_id %>
+  <%= form.hidden_field :car_id, value: @car.id %>
+  <%= form.label :sale_date %>
+  <%= form.datetime_local_field :sale_date %>
+
+  <%= form.submit 'Criar Venda' %>
+<% end %>

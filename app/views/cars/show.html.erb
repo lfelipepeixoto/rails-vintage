@@ -2,7 +2,7 @@
   <h2><%= @car.model%></h2>
     <div class="vehicle-container">
       <div class="vehicle-card">
-          <%= cl_image_tag @car.photo.key, height: 300, width: 350 %>
+          <%= cl_image_tag @car.photo.key, height: 300, width: 350 if @car.photo.attached? %>
           <p><strong>Manufacturer:</strong> <%= @car.manufacturer %></p>
           <p><strong>Model:</strong> <%= @car.model %></p>
           <p><strong>Year:</strong> <%= @car.year %></p>
@@ -12,12 +12,9 @@
       </div>
 
       <div class="info-card">
-        <p> <%= @user.first_name %></p>
-        <p> <%= @user.last_name %></p>
-        <p><%= @user.email %></p>
-        <h3>TELEFONE DO VENDEDOR</h3>
-        <h3>ENDEREÇO DO VENDEDOR</h3>
-        <button>BUY</button>
+        <h3><strong>Nome do Vendedor:</strong> <%= @car.user.first_name %></h3>
+        <h3><strong>Email do Vendedor:</strong> <%= @car.user.email %></h3>
+        <%= link_to "Buy", new_order_path(car_id: @car.id), class: "btn btn-primary" %>
       </div>
 
     </div>

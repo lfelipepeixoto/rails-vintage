@@ -51,9 +51,15 @@
             <li>
               <%= link_to 'My Cars', my_cars_path %>
             </li>
-          </ul>
+              <% if user_signed_in? %>
+                <%= link_to 'Sing Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+              <% else %>
+                <%= link_to 'Login', new_user_password_path, class: 'btn btn-primary' %>
+              <% end %>
+            </ul>
         </li>
 <%# -------------------------------------------------------------------------- %>
     </ul>
 </nav>
 </section>
+  

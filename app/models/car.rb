@@ -7,6 +7,7 @@ class Car < ApplicationRecord
   validates :km, presence: true
 
   belongs_to :user
+  has_one :sale, dependent: :destroy
 
   has_one_attached :photo
 
